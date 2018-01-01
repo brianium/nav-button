@@ -2,14 +2,58 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NAV Button</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   </head>
-  <body>
-    <button class="nav-btn">
+  <body style="background-color: #efefef;">
+    <h1>Default Button</h1>
+    <p>
+      The default button functions by copying the coin address to the clipboard
+      when the button is clicked
+    </p>
+
+    <button id="default-nav" class="nav-btn" data-clipboard-text="NYWzctY3w31mocozf4uUpUgu2mALT4MbwX">
       <span class="nav-btn__text">Tip with NAV</span>
-      <span class="nav-btn__address">NYWzctY3w31mocozf4uUpUgu2mALT4MbwX</span>
+      <span title="click to copy address" class="nav-btn__address">NYWzctY3w31mocozf4uUpUgu2mALT4MbwX</span>
     </button>
-    <script src="http://localhost:9000/nav-button.js"></script>
+
+    <h1>QR Enabled Button</h1>
+    <p>
+      The QR enabled button expands on the default button and shows a richer
+      QR code component when the button is clicked.
+    </p>
+
+    <div class="nav-btn-container">
+      <button id="qr-nav" class="nav-btn" data-clipboard-text="NYWzctY3w31mocozf4uUpUgu2mALT4MbwX">
+        <span class="nav-btn__text">Tip with NAV</span>
+        <span class="nav-btn__address">NYWzctY3w31mocozf4uUpUgu2mALT4MbwX</span>
+      </button>
+      <div class="nav-btn-qr">
+        <canvas></canvas>
+        <div class="nav-btn-qr__input">
+          <input class="nav-btn-qr__input__field" type="text" value="NYWzctY3w31mocozf4uUpUgu2mALT4MbwX" readonly />
+          <button class="nav-btn-qr__input__btn">
+            <svg
+              aria-hidden="true"
+              data-icon="clipboard"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M336 64h-80c0-35.29-28.71-64-64-64s-64 28.71-64 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h288c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V118a6 6 0 0 1 6-6h42v36c0 6.627 5.373 12 12 12h168c6.627 0 12-5.373 12-12v-36h42a6 6 0 0 1 6 6v340a6 6 0 0 1-6 6zM192 40c13.255 0 24 10.745 24 24s-10.745 24-24 24-24-10.745-24-24 10.745-24 24-24"
+              />
+            </svg>
+          </button>
+        </div>
+        <span class="nav-btn-qr__arrow"></span>
+      </div>
+    </div>
+    <p>
+      The generated qr code should sit nicely on top of text that comes after it.
+    </p>
+    <script src="/nav-button.js"></script>
+    <script src="/dev/example.js"></script>
   </body>
 </html>
