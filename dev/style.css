@@ -1,0 +1,49 @@
+body {
+  color: #7a7a7a;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+}
+
+.container--default {
+  background-color: hsl(199, 81%, 58%);
+  color: #fff;
+}
+
+.container--default h1,
+.container--default h2,
+.container--default h3,
+.container--default h4,
+.container--default h5,
+.container--default h6 {
+  color: #fff;
+}
+
+.callout {
+  font-size: 26px;
+}
+
+.hero {
+  padding-top: 45px;
+}
+
+.copy-text {
+  transition: opacity 200ms ease-in;
+  opacity: 0;
+}
+
+.opaque {
+  opacity: 1 !important;
+}

@@ -15,9 +15,9 @@ export default class NavQrButton extends NavButton {
     super(element);
     element.classList.add("nav-btn--qr");
     this.parent = element.parentNode;
-    this.popover = this.parent.lastElementChild;
-    this.canvas = this.popover.firstElementChild;
-    this.address = element.lastElementChild;
+    this.popover = this.parent.getElementsByClassName("nav-btn-qr")[0];
+    this.canvas = this.popover.getElementsByTagName("canvas")[0];
+    this.address = element.getElementsByClassName("nav-btn__address")[0];
     this.addressText = this.address.textContent;
     this.closeText = this.address.dataset.closeText || "Thanks! Got it";
   }

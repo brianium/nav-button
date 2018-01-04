@@ -3,15 +3,18 @@
  ****************************/
 .nav-btn-container {
   position: relative;
+  width: 185px;
 }
 
 .nav-btn-qr {
   background-color: hsl(263, 38%, 53%);
   display: none;
+  left: 50%;
   margin-top: 15px;
-  padding: 17px 0;
+  padding: 19px 0;
   position: absolute;
-  width: 185px;
+  transform: translateX(-50%);
+  width: 100%;
   z-index: 99;
 }
 
@@ -62,11 +65,27 @@
   width: 148px;
 }
 
+.nav-btn-qr__link {
+  color: #f5d58f;
+  font-size: 12px;
+  line-height: 5px;
+  position: relative;
+  text-align: center;
+  transition: color 200ms ease-in;
+  top: 10px;
+}
+
+.nav-btn-qr__link:hover {
+  color: #f0c35f;
+  text-decoration: none;
+}
+
 .nav-btn-qr__input__field {
   border-radius: 0;
   border-size: 0;
   border-style: none;
   box-sizing: border-box;
+  font-size: 12px;
   padding: 4px;
   width: 100%;
 }
