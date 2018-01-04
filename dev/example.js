@@ -5,7 +5,6 @@ var factory = window.navButton.nav;
 var defaultButton = factory("#default-nav");
 defaultButton.onCopy(function () {
   var element = document.getElementById('nav-btn-default');
-  console.log(element);
   element.classList.add('opaque');
   setTimeout(function () {
     element.classList.remove('opaque');
