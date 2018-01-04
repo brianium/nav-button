@@ -1,6 +1,10 @@
 /** Colors **/
 $primary-color: hsl(263, 38%, 53%);
 $primary-color-alt: #523971;
+$primary-color-border: #4d3474;
+$alt-color: hsl(199, 81%, 58%);
+$alt-color-alt: #2b7a9d;
+$alt-color-border: darken($alt-color-alt, 8%);
 $info-color: #f5d58f;
 $info-color-active: #f0c35f;
 

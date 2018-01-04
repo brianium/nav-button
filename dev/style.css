@@ -17,22 +17,37 @@ h6 {
   font-weight: 700;
 }
 
-.container--default {
+.container--primary {
   background-color: hsl(199, 81%, 58%);
   color: #fff;
 }
 
-.container--default h1,
-.container--default h2,
-.container--default h3,
-.container--default h4,
-.container--default h5,
-.container--default h6 {
+.container--secondary {
+  background-color: hsl(263, 38%, 53%);
+  color: #fff;
+}
+
+.container--primary h1,
+.container--primary h2,
+.container--primary h3,
+.container--primary h4,
+.container--primary h5,
+.container--primary h6,
+.container--secondary h1,
+.container--secondary h2,
+.container--secondary h3,
+.container--secondary h4,
+.container--secondary h5,
+.container--secondary h6 {
   color: #fff;
 }
 
 .callout {
   font-size: 26px;
+}
+
+.callout--section {
+  font-size: 20px !important;
 }
 
 .hero {
