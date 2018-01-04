@@ -1,5 +1,6 @@
 import NavButton from "./NavButton";
 import NavQrButton from "./NavQrButton";
+import 'scss/nav-button.scss';
 
 /**
  * Supported options with their defaults

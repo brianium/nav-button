@@ -1,5 +1,4 @@
 import Clipboard from "clipboard";
-import "./nav-button.css";
 
 export default class NavButton {
   static get CLICK_DURATION() {

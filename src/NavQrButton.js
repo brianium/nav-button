@@ -1,7 +1,6 @@
 import QRCode from "qrcode";
 import Clipboard from "clipboard";
 import NavButton from "./NavButton";
-import "./nav-qr.css";
 
 export default class NavQrButton extends NavButton {
   static get HAS_QR_CLASS() {

@@ -7,7 +7,7 @@
 }
 
 .nav-btn-qr {
-  background-color: hsl(263, 38%, 53%);
+  background-color: $primary-color;
   display: none;
   left: 50%;
   margin-top: 15px;
@@ -50,7 +50,7 @@
 .nav-btn-qr .nav-btn-qr__arrow {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid hsl(263, 38%, 53%);
+  border-bottom: 10px solid $primary-color;
   height: 0;
   left: 50%;
   position: absolute;
@@ -66,7 +66,7 @@
 }
 
 .nav-btn-qr__link {
-  color: #f5d58f;
+  color: $info-color;
   font-size: 12px;
   line-height: 5px;
   position: relative;
@@ -76,7 +76,7 @@
 }
 
 .nav-btn-qr__link:hover {
-  color: #f0c35f;
+  color: $info-color-active;
   text-decoration: none;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .nav-btn-qr__input__btn {
-  background: #523971;
+  background: $primary-color-alt;
   border: none;
   cursor: pointer;
   fill: #fff;
