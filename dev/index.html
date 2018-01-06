@@ -49,7 +49,7 @@
             convenience of a QR code.
           </p>
           <div class="nav-btn-container mb-3">
-            <button id="qr-nav" class="nav-btn nav-btn mx-auto demo-btn--qr" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+            <button id="qr-nav" class="nav-btn mx-auto demo-btn--qr" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
               <span class="nav-btn__text">Pay with NAV</span>
               <span class="nav-btn__action-text">Show QR Code</span>
             </button>
@@ -191,6 +191,7 @@ import { NavButton } from 'nav-button/dist/nav-button-react';
 
 const MyComponent = () =&gt; (
   &lt;NavButton
+    address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"
     text="Tip with NAV"
     actionText="Copy Address"
     onCopy={copyHandler}
@@ -204,6 +205,7 @@ import { NavQrButton } from 'nav-button/dist/nav-button-react';
 
 const MyComponent = () =&gt; (
   &lt;NavQrButton
+    address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"
     text="Pay with NAV"
     actionText="Show QR Code"
     onCopy={copyHandler}
