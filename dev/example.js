@@ -3,15 +3,30 @@ var factory = window.navButton.nav;
 
 // instantiate a default copy text button
 var defaultButton = factory("#default-nav");
-defaultButton.onCopy(function () {
-  var element = document.getElementById('nav-btn-default');
-  element.classList.add('opaque');
-  setTimeout(function () {
-    element.classList.remove('opaque');
+defaultButton.onCopy(function() {
+  var element = document.getElementById("nav-btn-default");
+  element.classList.add("opaque");
+  setTimeout(function() {
+    element.classList.remove("opaque");
   }, 5000);
 });
 
 // instantiate a nav button with qr code support
 var qrButton = factory("#qr-nav", {
+  type: "qr"
+});
+
+/// Alt buttons
+var defaultButtonAlt = factory("#default-nav-alt");
+defaultButtonAlt.onCopy(function() {
+  var element = document.getElementById("nav-btn-default-alt");
+  element.classList.add("opaque");
+  setTimeout(function() {
+    element.classList.remove("opaque");
+  }, 5000);
+});
+
+// instantiate a nav button with qr code support
+var qrButtonAlt = factory("#qr-nav-alt", {
   type: "qr"
 });

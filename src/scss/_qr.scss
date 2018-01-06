@@ -131,3 +131,17 @@
     padding-top: 3px;
   }
 }
+
+.nav-btn-container--alt {
+  .nav-btn-qr {
+    background-color: $alt-color;
+
+    &__arrow {
+      border-bottom-color: $alt-color;
+    }
+
+    &__input__btn {
+      background: $alt-color-alt;
+    }
+  }
+}
