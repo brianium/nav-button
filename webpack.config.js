@@ -4,7 +4,7 @@ module.exports = {
   entry: "./src/index",
 
   output: {
-    path: path.resolve(__dirname, "lib"),
+    path: path.resolve(__dirname, "dist"),
     filename: "nav-button.js",
     libraryTarget: "umd",
     library: "navButton"
@@ -41,7 +41,7 @@ module.exports = {
   resolve: {
     modules: ["node_modules", path.resolve(__dirname, "src")],
 
-    extensions: [".js", ".css"]
+    extensions: [".js", ".scss"]
   },
 
   devtool: "eval-source-map",

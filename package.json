@@ -2,19 +2,24 @@
   "name": "nav-button",
   "version": "1.0.0",
   "description": "A simple NAV coin widget for displaying your nav address",
-  "main": "index.js",
+  "main": "dist/nav-button.js",
   "repository": "https://github.com/brianium/nav-button",
   "author": "Brian Scaturro",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack -p --config webpack.config.prod.js",
+    "build:site":
+      "npm run clean && npm run build && mkdir site && cp -r dev/ site && cp dist/{nav-button.js,nav-button.css} site && sed -i \"\" 's/dev\\///g' site/index.html && sed -i \"\" 's/<!-- build:site -->/<link rel=\"stylesheet\" href=\"nav-button.css\">/g' site/index.html",
+    "clean": "rm -rf dist && rm -rf site"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.36",
     "@babel/preset-env": "^7.0.0-beta.36",
     "autoprefixer": "^7.2.3",
     "babel-loader": "8.0.0-beta.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.0.9",
     "sass-loader": "^6.0.6",
