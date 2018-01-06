@@ -10,6 +10,7 @@ export default class NavButton {
    */
   constructor(element) {
     this.element = element;
+    this.address = this.element.dataset.address;
     this.clipboard = this.createClipboard(element);
     this.listen();
   }

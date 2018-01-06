@@ -3,7 +3,6 @@
  ****************************/
 .nav-btn-container {
   position: relative;
-  width: 185px;
 
   &--has-qr {
     .nav-btn-qr {
@@ -11,7 +10,7 @@
       flex-direction: column;
     }
 
-    .nav-btn__address {
+    .nav-btn__action-text {
       background-image: none;
       font-size: 16px;
       transform: translateX(0);
@@ -27,14 +26,14 @@
   }
 
   &.nav-start-out {
-    .nav-btn__address {
-      font-size: 8px !important;
+    .nav-btn__action-text {
+      font-size: 80% !important;
     }
   }
 }
 
 .nav-btn--qr {
-  .nav-btn__address {
+  .nav-btn__action-text {
     background-image: url($qr-uri);
   }
 }
@@ -47,7 +46,7 @@
   padding: 19px 0;
   position: absolute;
   transform: translateX(-50%);
-  width: 100%;
+  width: 185px;
   z-index: 99;
 
   &.nav-start-in {
@@ -118,6 +117,7 @@
     border-style: none;
     box-sizing: border-box;
     font-size: 12px;
+    overflow: hidden;
     padding: 4px;
     width: 100%;
   }

@@ -16,9 +16,10 @@ export default class NavQrButton extends NavButton {
     this.parent = element.parentNode;
     this.popover = this.parent.getElementsByClassName("nav-btn-qr")[0];
     this.canvas = this.popover.getElementsByTagName("canvas")[0];
-    this.address = element.getElementsByClassName("nav-btn__address")[0];
-    this.addressText = this.address.textContent;
-    this.closeText = this.address.dataset.closeText || "Thanks! Got it";
+    this.action = element.getElementsByClassName("nav-btn__action-text")[0];
+    this.actionText = this.action.textContent;
+    this.closeText = this.action.dataset.closeText || "Thanks! Got it";
+    this.qrCodeGenerated = false;
   }
 
   /**
@@ -75,13 +76,29 @@ export default class NavQrButton extends NavButton {
   /**
    * Writes a QR code address to the button element's canvas element
    */
-  createQrCode() {
-    const { canvas, addressText, popover, address, closeText, parent } = this;
-    QRCode.toCanvas(canvas, addressText, e => {
+  showQrCode() {
+    const {
+      canvas,
+      actionText,
+      popover,
+      action,
+      closeText,
+      parent,
+      element,
+      qrCodeGenerated,
+      address
+    } = this;
+
+    if (qrCodeGenerated) {
+      parent.classList.toggle(NavQrButton.HAS_QR_CLASS);
+      return;
+    }
+
+    QRCode.toCanvas(canvas, address, e => {
       if (e) {
         throw e;
       }
-      address.textContent = `${closeText} \u00D7`;
+      action.textContent = `${closeText} \u00D7`;
       parent.classList.toggle(NavQrButton.HAS_QR_CLASS);
       this.animatePopover("nav-start-in", "nav-transition-in");
     });
@@ -91,8 +108,8 @@ export default class NavQrButton extends NavButton {
    * Clears the QR code and hides the button pop over
    */
   clearQrCode() {
-    const { parent, address, addressText } = this;
-    address.textContent = addressText;
+    const { parent, action, actionText } = this;
+    action.textContent = actionText;
     this.animatePopover("nav-start-out", "nav-transition-out", () => {
       parent.classList.remove(NavQrButton.HAS_QR_CLASS);
     });
@@ -106,7 +123,7 @@ export default class NavQrButton extends NavButton {
     if (this.hasQrCode()) {
       this.clearQrCode();
     } else {
-      this.createQrCode();
+      this.showQrCode();
     }
   }
 }

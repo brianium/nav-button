@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NAV Button</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:700|Roboto:300,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,700|Roboto:300,700">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="/dev/style.css">
   </head>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="container-fluid container--primary">
-      <div class="row justify-content-center pt-5">
+      <div class="row justify-content-center pt-5 pb-5">
         <div class="col-md-4">
           <h3>Click to Copy</h3>
           <p>
@@ -28,9 +28,9 @@
             to send Nav as a way of thanks! The default button provides a simple copy to clipboard
             for your Nav address. Try it!
           </p>
-          <button id="default-nav" class="nav-btn mx-auto mb-3" data-clipboard-text="NYWzctY3w31mocozf4uUpUgu2mALT4MbwX">
+          <button id="default-nav" class="nav-btn mx-auto mb-3" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
             <span class="nav-btn__text">Tip with NAV</span>
-            <span title="click to copy address" class="nav-btn__address">NYWzctY3w31mocozf4uUpUgu2mALT4MbwX</span>
+            <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
           </button>
 
           <p class="copy-text" id="nav-btn-default">
@@ -44,15 +44,15 @@
             buttons take up a little more space, but provide copy functionality as well as the
             convenience of a QR code.
           </p>
-          <div class="nav-btn-container mx-auto mb-3">
-            <button id="qr-nav" class="nav-btn" data-clipboard-text="NYWzctY3w31mocozf4uUpUgu2mALT4MbwX">
-              <span class="nav-btn__text">Tip with NAV</span>
-              <span class="nav-btn__address">NYWzctY3w31mocozf4uUpUgu2mALT4MbwX</span>
+          <div class="nav-btn-container mb-3">
+            <button id="qr-nav" class="nav-btn mx-auto" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+              <span class="nav-btn__text">Pay with NAV</span>
+              <span class="nav-btn__action-text">Show QR Code</span>
             </button>
             <div class="nav-btn-qr">
               <canvas></canvas>
               <div class="nav-btn-qr__input">
-                <input class="nav-btn-qr__input__field" type="text" value="NYWzctY3w31mocozf4uUpUgu2mALT4MbwX" readonly />
+                <input class="nav-btn-qr__input__field" type="text" value="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" readonly />
                 <button class="nav-btn-qr__input__btn">
                   <svg
                     aria-hidden="true"
@@ -73,6 +73,37 @@
           </div>
         </div>
       </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-4 order-md-1 order-2">
+          <ul class="button-list">
+            <li>
+              <button id="default-nav" class="nav-btn mx-auto mb-3" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+                <span class="nav-btn__text">Donate with NAV</span>
+                <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
+              </button>
+            </li>
+            <li>
+              <button id="default-nav" class="nav-btn nav-btn--md mx-auto mb-3" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+                <span class="nav-btn__text">Donate with NAV</span>
+                <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
+              </button>
+            </li>
+            <li>
+              <button id="default-nav" class="nav-btn nav-btn--sm mx-auto" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+                <span class="nav-btn__text">Donate with NAV</span>
+                <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 order-1 order-md-2">
+          <h3>All Shapes and Sizes</h3>
+          <p>
+            NAV buttons can accommodate lots of different text, and can be displayed
+            at various sizes. Pick a button size that is the right fit.
+          </p>
+        </div>
+      </div>
     </div>
     <div class="container-fluid container--secondary">
       <div class="row pt-5 pb-4">
@@ -84,7 +115,7 @@
           </p>
         </div>
       </div>
-      <div class="row justify-content-center">
+      <div class="row justify-content-center pb-5">
         <div class="col-md-4">
           <h3>Click to Copy</h3>
           <p>
@@ -92,9 +123,9 @@
             to send Nav as a way of thanks! The default button provides a simple copy to clipboard
             for your Nav address. Try it!
           </p>
-          <button id="default-nav" class="nav-btn nav-btn--alt mx-auto mb-3" data-clipboard-text="NYWzctY3w31mocozf4uUpUgu2mALT4MbwX">
+          <button id="default-nav" class="nav-btn nav-btn--alt mx-auto mb-3" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
             <span class="nav-btn__text">Tip with NAV</span>
-            <span title="click to copy address" class="nav-btn__address">NYWzctY3w31mocozf4uUpUgu2mALT4MbwX</span>
+            <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
           </button>
 
           <p class="copy-text" id="nav-btn-default">
@@ -108,15 +139,15 @@
             buttons take up a little more space, but provide copy functionality as well as the
             convenience of a QR code.
           </p>
-          <div class="nav-btn-container mx-auto mb-3">
-            <button id="qr-nav" class="nav-btn nav-btn--alt nav-btn--qr" data-clipboard-text="NYWzctY3w31mocozf4uUpUgu2mALT4MbwX">
-              <span class="nav-btn__text">Tip with NAV</span>
-              <span class="nav-btn__address">NYWzctY3w31mocozf4uUpUgu2mALT4MbwX</span>
+          <div class="nav-btn-container mb-3">
+            <button id="qr-nav" class="nav-btn nav-btn--alt mx-auto" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+              <span class="nav-btn__text">Pay with NAV</span>
+              <span class="nav-btn__action-text">Show QR Code</span>
             </button>
             <div class="nav-btn-qr">
               <canvas></canvas>
               <div class="nav-btn-qr__input">
-                <input class="nav-btn-qr__input__field" type="text" value="NYWzctY3w31mocozf4uUpUgu2mALT4MbwX" readonly />
+                <input class="nav-btn-qr__input__field" type="text" value="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" readonly />
                 <button class="nav-btn-qr__input__btn">
                   <svg
                     aria-hidden="true"

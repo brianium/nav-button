@@ -12,10 +12,22 @@
   flex: 1;
   font-family: $button-font;
   font-size: 18px;
+  font-weight: 700;
   overflow: hidden;
-  padding: 15px 15px;
+  padding: 15px;
   position: relative;
-  width: 185px;
+
+  &--md {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+  }
+
+  &--sm {
+    font-size: 12px;
+    font-weight: 300;
+    padding: 8px;
+  }
 
   &--alt {
     background-color: $alt-color;
@@ -42,14 +54,34 @@
     width: 30px;
   }
 
+  &--md::before {
+    background-size: 18px;
+    height: 25px;
+    width: 25px;
+  }
+
+  &--md::after {
+    right: -8em !important;
+  }
+
+  &--sm::before {
+    background-size: 14px;
+    height: 20px;
+    width: 20px;
+  }
+
+  &--sm::after {
+    right: -10em !important;
+  }
+
   &::after {
     content: "";
     background: $primary-color-alt;
-    height: 500%;
+    height: 500px;
     position: absolute;
-    left: -45px;
-    width: 150%;
-    transform: translateX(77%) rotate(60deg);
+    right: -5.5em;
+    width: 500px;
+    transform: translateX(77%) rotate(60deg) translateZ(0);
     transition: transform 200ms ease-in;
     z-index: 1;
   }
@@ -60,14 +92,14 @@
     z-index: 2;
   }
 
-  &__address {
+  &__action-text {
     align-items: center;
     background-image: url($copy-uri);
     background-repeat: no-repeat;
     background-position: center 40px;
     background-size: 10px;
     display: flex;
-    font-size: 8px;
+    font-size: 80%;
     -webkit-font-smoothing: antialiased;
     height: 100%;
     justify-content: center;
@@ -99,18 +131,28 @@
     }
   }
 
+  &--md .nav-btn__action-text {
+    background-position: 25px;
+    left: inherit;
+  }
+
+  &--sm .nav-btn__action-text {
+    background-position: 20px;
+    left: inherit;
+  }
+
   &:hover,
   &:active,
   &--is-active {
     &::after {
-      transform: translateX(0) rotate(60deg);
+      transform: translateX(0) rotate(60deg) translateZ(0);
     }
 
     .nav-btn__text {
       transform: translateX(-200%);
     }
 
-    .nav-btn__address {
+    .nav-btn__action-text {
       transform: translateX(0);
     }
   }
