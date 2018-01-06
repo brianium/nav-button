@@ -12,7 +12,6 @@
 
     .nav-btn__action-text {
       background-image: none;
-      font-size: 16px;
       transform: translateX(0);
     }
 
@@ -36,16 +35,22 @@
   .nav-btn__action-text {
     background-image: url($qr-uri);
   }
+
+  &.nav-btn--md .nav-btn__action-text {
+    background-position: 15px;
+  }
+
+  &.nav-btn--sm .nav-btn__action-text {
+    background-position: 10px;
+  }
 }
 
 .nav-btn-qr {
   background-color: $primary-color;
   display: none;
-  left: 50%;
   margin-top: 15px;
   padding: 19px 0;
   position: absolute;
-  transform: translateX(-50%);
   width: 185px;
   z-index: 99;
 
@@ -132,6 +137,19 @@
   }
 }
 
+.nav-btn-container--qr-right {
+  .nav-btn-qr {
+    &__arrow {
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid $primary-color;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
 .nav-btn-container--alt {
   .nav-btn-qr {
     background-color: $alt-color;
@@ -142,6 +160,15 @@
 
     &__input__btn {
       background: $alt-color-alt;
+    }
+  }
+
+  &.nav-btn-container--qr-right {
+    .nav-btn-qr {
+      &__arrow {
+        border-bottom-color: transparent;
+        border-right-color: $alt-color;
+      }
     }
   }
 }

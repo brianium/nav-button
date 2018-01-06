@@ -126,9 +126,13 @@
 
     &--is-animating {
       &::before {
-        animation: confirm-pulse 350ms;
+        animation: confirm-pulse 300ms;
       }
     }
+  }
+
+  &--alt .nav-btn__action-text::before {
+    background-color: $alt-color;
   }
 
   &--md .nav-btn__action-text {

@@ -1,6 +1,14 @@
 import QRCode from "qrcode";
 import Clipboard from "clipboard";
 import NavButton from "./NavButton";
+import { relativePosition, rect } from "./util";
+
+/**
+ * @todo attempt to calculate these - animating the popover makes
+ * getting the DOMRect tricky
+ */
+const POPOVER_MIDDLE = 100;
+const POPOVER_WIDTH = 185;
 
 export default class NavQrButton extends NavButton {
   static get HAS_QR_CLASS() {
@@ -9,11 +17,19 @@ export default class NavQrButton extends NavButton {
 
   /**
    * Create a NavButton that supports QR codes
+   *
+   * @param {HTMLElement} element
+   * @param {Object} options
    */
-  constructor(element) {
-    super(element);
-    element.classList.add("nav-btn--qr");
+  constructor(element, options = {}) {
+    super(element, options);
     this.parent = element.parentNode;
+
+    element.classList.add("nav-btn--qr");
+    if (options.position === "right") {
+      this.parent.classList.add("nav-btn-container--qr-right");
+    }
+
     this.popover = this.parent.getElementsByClassName("nav-btn-qr")[0];
     this.canvas = this.popover.getElementsByTagName("canvas")[0];
     this.action = element.getElementsByClassName("nav-btn__action-text")[0];
@@ -74,23 +90,51 @@ export default class NavQrButton extends NavButton {
   }
 
   /**
+   * Position the QR Code relative to the button
+   */
+  positionQrCode() {
+    const { element, popover, options } = this;
+    const { position } = options;
+
+    // read position from elements
+    const elementPos = relativePosition(element);
+    const elementRect = rect(element);
+    const elementCenter = elementPos.left + elementRect.width / 2;
+
+    // init offsets
+    const marginLeft = 15;
+    const left =
+      position === "right"
+        ? elementPos.left + elementRect.width + marginLeft
+        : elementCenter - POPOVER_WIDTH / 2;
+
+    const top =
+      position === "right"
+        ? elementPos.top - POPOVER_MIDDLE
+        : elementPos.bottom;
+
+    // apply position
+    popover.style.left = `${left}px`;
+    popover.style.top = `${top}px`;
+  }
+
+  /**
    * Writes a QR code address to the button element's canvas element
    */
   showQrCode() {
     const {
       canvas,
-      actionText,
-      popover,
       action,
+      actionText,
       closeText,
       parent,
-      element,
       qrCodeGenerated,
       address
     } = this;
 
     if (qrCodeGenerated) {
       parent.classList.toggle(NavQrButton.HAS_QR_CLASS);
+      this.positionQrCode();
       return;
     }
 
@@ -99,6 +143,7 @@ export default class NavQrButton extends NavButton {
         throw e;
       }
       action.textContent = `${closeText} \u00D7`;
+      this.positionQrCode();
       parent.classList.toggle(NavQrButton.HAS_QR_CLASS);
       this.animatePopover("nav-start-in", "nav-transition-in");
     });

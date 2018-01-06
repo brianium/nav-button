@@ -1,6 +1,6 @@
 import NavButton from "./NavButton";
 import NavQrButton from "./NavQrButton";
-import 'scss/nav-button.scss';
+import "scss/nav-button.scss";
 
 /**
  * Supported options with their defaults
@@ -34,8 +34,8 @@ export function nav(elementOrSelector, options = DEFAULT_OPTIONS) {
   const { type } = options;
   switch (type) {
     case "qr":
-      return new NavQrButton(element);
+      return new NavQrButton(element, options);
     default:
-      return new NavButton(element);
+      return new NavButton(element, options);
   }
 }

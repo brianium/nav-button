@@ -1,7 +1,9 @@
 // rely on UMD bundle to pull api off of window
 var factory = window.navButton.nav;
 
-// instantiate a default copy text button
+/**
+ * Demo copy listeners
+ */
 var defaultButton = factory("#default-nav");
 defaultButton.onCopy(function() {
   var element = document.getElementById("nav-btn-default");
@@ -9,11 +11,6 @@ defaultButton.onCopy(function() {
   setTimeout(function() {
     element.classList.remove("opaque");
   }, 5000);
-});
-
-// instantiate a nav button with qr code support
-var qrButton = factory("#qr-nav", {
-  type: "qr"
 });
 
 /// Alt buttons
@@ -26,7 +23,18 @@ defaultButtonAlt.onCopy(function() {
   }, 5000);
 });
 
-// instantiate a nav button with qr code support
-var qrButtonAlt = factory("#qr-nav-alt", {
-  type: "qr"
-});
+/**
+ * Enable all other demo buttons
+ */
+var demos = document.getElementsByClassName("demo-btn");
+for (var i = 0; i < demos.length; i++) {
+  factory(demos[i]);
+}
+
+var qrs = document.getElementsByClassName("demo-btn--qr");
+for (var i = 0; i < qrs.length; i++) {
+  factory(qrs[i], {
+    type: "qr",
+    position: qrs[i].dataset.position || "bottom"
+  });
+}

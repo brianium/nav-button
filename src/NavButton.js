@@ -7,9 +7,13 @@ export default class NavButton {
 
   /**
    * Create a NavButton instance from the given nav button element
+   *
+   * @param {HTMLElement} element
+   * @param {Object} options
    */
-  constructor(element) {
+  constructor(element, options = {}) {
     this.element = element;
+    this.options = options;
     this.address = this.element.dataset.address;
     this.clipboard = this.createClipboard(element);
     this.listen();
@@ -29,7 +33,7 @@ export default class NavButton {
    */
   onClick(e) {
     const { target: address } = e;
-    const className = "nav-btn__address--is-animating";
+    const className = "nav-btn__action-text--is-animating";
     address.classList.add(className);
     setTimeout(
       () => address.classList.remove(className),
