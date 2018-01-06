@@ -1,6 +1,6 @@
 {
   "name": "nav-button",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A simple NAV coin widget for displaying your nav address",
   "main": "dist/nav-button.js",
   "repository": "https://github.com/brianium/nav-button",
@@ -14,7 +14,7 @@
       "npm run clean && npm run build && mkdir site && cp -r dev/ site && cp dist/{nav-button.js,nav-button-react.js,nav-button.css} site && bash scripts/site-replace.sh",
     "clean": "rm -rf dist && rm -rf site",
     "deploy:site": "push-dir --dir=site --branch=gh-pages",
-    "build:publish": "npm run clean && npm run build"
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.36",
