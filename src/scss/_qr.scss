@@ -101,7 +101,8 @@
     }
   }
 
-  &__link {
+  &__link,
+  &__link:visited {
     color: $info-color;
     font-size: 12px;
     line-height: 5px;
@@ -111,7 +112,8 @@
     top: 10px;
   }
 
-  &__link:hover {
+  &__link:hover,
+  &__link:active {
     color: $info-color-active;
     text-decoration: none;
   }

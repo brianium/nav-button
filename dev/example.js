@@ -73,7 +73,8 @@ ReactDOM.render(
       address: "NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt",
       text: "Pay with NAV",
       actionText: "Show QR Code",
-      closeText: "Thanks! Got it"
+      closeText: "Thanks! Got it",
+      alt: true
     },
     null
   ),
