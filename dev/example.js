@@ -1,5 +1,5 @@
 // rely on UMD bundle to pull api off of window
-var factory = window.navButton.nav;
+var factory = window.navButton.default;
 
 /**
  * Demo copy listeners

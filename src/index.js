@@ -18,7 +18,7 @@ const DEFAULT_OPTIONS = {
  * @param {String|HTMLElement} elementOrSelector
  * @param {Object} options
  */
-export function nav(elementOrSelector, options = DEFAULT_OPTIONS) {
+export default function nav(elementOrSelector, options = DEFAULT_OPTIONS) {
   let element = elementOrSelector;
 
   if (typeof elementOrSelector === "string") {
