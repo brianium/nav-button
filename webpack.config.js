@@ -1,13 +1,16 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index",
+  entry: {
+    "nav-button": "./src/index.js",
+    "nav-button-react": "./src/react/index.js"
+  },
 
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "nav-button.js",
+    filename: "[name].js",
     libraryTarget: "umd",
-    library: "navButton"
+    library: "[name]"
   },
 
   module: {
@@ -17,7 +20,7 @@ module.exports = {
         include: [path.resolve(__dirname, "src")],
         loader: "babel-loader",
         options: {
-          presets: ["@babel/preset-env"]
+          presets: ["@babel/preset-env", "@babel/preset-react"]
         }
       },
 

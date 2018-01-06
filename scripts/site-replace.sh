@@ -6,3 +6,4 @@ sed -i "" 's/<!-- build:site -->/<link rel="stylesheet" href="nav-button.css">/g
 
 # strip leading slash from dev bundle path
 sed -i "" 's/\/nav-button/nav-button/g' site/index.html
+sed -i "" 's/\/nav-button-react/nav-button-react/g' site/index.html

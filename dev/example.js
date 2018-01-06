@@ -1,5 +1,5 @@
 // rely on UMD bundle to pull api off of window
-var factory = window.navButton.default;
+var factory = window["nav-button"].default;
 
 /**
  * Demo copy listeners
@@ -38,3 +38,44 @@ for (var i = 0; i < qrs.length; i++) {
     position: qrs[i].dataset.position || "bottom"
   });
 }
+
+/*************************
+ * React Components
+ *************************/
+var NavButton = window["nav-button-react"].NavButton;
+var NavQrButton = window["nav-button-react"].NavQrButton;
+
+var target1 = document.getElementById("react-nav-btn");
+var target2 = document.getElementById("react-nav-qr");
+
+ReactDOM.render(
+  React.createElement(
+    NavButton,
+    {
+      address: "NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt",
+      onCopy: function() {
+        var element = document.getElementById("nav-btn-default-react");
+        element.classList.add("opaque");
+        setTimeout(function() {
+          element.classList.remove("opaque");
+        }, 5000);
+      }
+    },
+    null
+  ),
+  target1
+);
+
+ReactDOM.render(
+  React.createElement(
+    NavQrButton,
+    {
+      address: "NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt",
+      text: "Pay with NAV",
+      actionText: "Show QR Code",
+      closeText: "Thanks! Got it"
+    },
+    null
+  ),
+  target2
+);

@@ -6,6 +6,10 @@
     <title>NAV Button</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="/dev/style.css">
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <!-- build:site -->
   </head>
   <body>
@@ -130,7 +134,7 @@
         <div class="col-md-4">
           <h3>Use QR Codes</h3>
           <div class="nav-btn-container nav-btn-container--alt mb-3">
-            <button id="qr-nav-alt" class="nav-btn nav-btn--alt mx-auto demo-btn--qr" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-position="right">
+            <button id="qr-nav-alt" class="nav-btn nav-btn--alt mx-auto demo-btn--qr" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
               <span class="nav-btn__text">Pay with NAV</span>
               <span class="nav-btn__action-text">Show QR Code</span>
             </button>
@@ -159,7 +163,84 @@
         </div>
       </div>
     </div>
+    <div class="container-fluid">
+      <div class="row justify-content-center pt-5 pb-4">
+        <div class="col-md-12">
+          <h2>Components</h2>
+          <p class="callout callout--section">
+            Everyone goes nuts for components. The NAV buttons packages comes FULLY LOADED
+            with <a target="__blank" href="https://reactjs.org/">React</a> components.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-4">
+          <div id="react-nav-btn" class="react-container mb-3"></div>
+          <p class="copy-text" id="nav-btn-default-react">
+            Copied!
+          </p>
+        </div>
+        <div class="col-md-4">
+          <div id="react-nav-qr" class="react-container mb-3"></div>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-4">
+<pre><code class="javascript">import React from 'react';
+import { NavButton } from 'nav-button/lib/react';
+
+const MyComponent = () =&gt; (
+  &lt;NavButton
+    text="Tip with NAV"
+    actionText="Copy Address"
+    onCopy={copyHandler}
+  /&gt;
+);
+</code></pre>
+        </div>
+        <div class="col-md-4">
+<pre><code class="javascript">import React from 'react';
+import { NavQrButton } from 'nav-button/lib/react';
+
+const MyComponent = () =&gt; (
+  &lt;NavQrButton
+    text="Pay with NAV"
+    actionText="Show QR Code"
+    onCopy={copyHandler}
+    closeText="Thanks! Got it"
+  /&gt;
+);
+</code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container--footer">
+      <div class="row justify-content-center align-items-center">
+        <div class="made-with-love col-md-6">
+          <span>Made with</span>
+          <svg data-fa-processed="" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-heart fa-w-18 fa-2x"><path d="M414.9 24C361.8 24 312 65.7 288 89.3 264 65.7 214.2 24 161.1 24 70.3 24 16 76.9 16 165.5c0 72.6 66.8 133.3 69.2 135.4l187 180.8c8.8 8.5 22.8 8.5 31.6 0l186.7-180.2c2.7-2.7 69.5-63.5 69.5-136C560 76.9 505.7 24 414.9 24z"></path></svg>
+          <span>
+            by <a href="https://github.com/brianium" target="__blank">@brianium</a>
+          </span>
+        </div>
+        <div class="col-md-6">
+          <nav class="links">
+            <ul>
+              <li>
+                <a target="__blank" href="https://github.com/brianium/nav-button">full documentation</a>
+              </li>
+              <li>
+                <a target="__blank" href="https://fontawesome.com/">icons by font awesome 5</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
     <script src="/nav-button.js"></script>
+    <script src="/nav-button-react.js"></script>
     <script src="/dev/example.js"></script>
   </body>
 </html>
