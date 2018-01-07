@@ -59,40 +59,13 @@ After rendering a button you can use the JavaScript API to bring it to life.
 
 ### Vanilla JS
 
-The vanilla JavaScript approach can be used to generated `HTMLElements` that can then
-be added to a page, or be used to target existing button elements.
-
-The default factory export can be given an element (see *Template* section below) or a selector:
+The default export can be given an element or a selector. For markup templates used
+to render buttons, see the [templates section](#templates).
 
 ```js
 import factory from 'nav-button';
 
 factory('#my-tip-button');
-```
-
-You can also get a button dynamically and append it to your document:
-
-```js
-import { createButton } from 'nav-button';
-
-const button = createButton({
-  address: 'NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt'
-});
-
-document.getElementById('tipme').appendChild(button);
-```
-
-#### Options
-
-The following options are supported:
-
-```js
-{
-  type: 'qr', // type of button - if not qr, will be the default click to copy button
-  position: 'bottom', // where to open qr code popover - can be bottom or right
-  alt: false, // set to true to use the alternative blue button style
-  size: '', // can be "md" for medium buttons or "sm" for small buttons - default is the large button style
-}
 ```
 
 ### React
@@ -131,7 +104,7 @@ const MyComponent = () => (
 );
 ```
 
-The following props are supported for these components:
+The following props are supported for the `NavButton`:
 
 ```js
 {
@@ -141,10 +114,17 @@ The following props are supported for these components:
   actionTitle: "click to copy address",
   onCopy: () => {},
   className: "",
-  closeText: "Thanks! Got it",
   size: "", // supports size variants via "sm" for small, and "md" for medium - default is large,
-  options: {} // any other option supported by the vanilla js factory - properties specified here will be preferred over props if there are collisions
 };
+```
+
+The `NavQrButton` supports all the props of `NavButton`, but additionaly supports the following:
+
+```js
+{
+  position: "bottom", // controls where the qr code opens - can be bottom or right - defaults to bottom
+  closeText: "Thanks! Got it"
+}
 ```
 
 ### Templates

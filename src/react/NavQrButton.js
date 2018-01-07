@@ -13,16 +13,9 @@ function classes(props) {
   return classNames.join(" ");
 }
 
-/**
- * @return {Object}
- */
-function options(props) {
-  return Object.assign({}, props, { type: "qr" });
-}
-
 const NavQrButton = props => (
   <div class={classes(props)}>
-    <NavButton options={options(props)} {...props} />
+    <NavButton {...props} type="qr" />
     <div className="nav-btn-qr">
       <canvas />
       <div className="nav-btn-qr__input">

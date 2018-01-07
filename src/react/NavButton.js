@@ -3,8 +3,9 @@ import factory from "../";
 
 class NavButton extends Component {
   componentDidMount() {
-    const { onCopy, options } = this.props;
-    this.button = factory(this.element, options);
+    const { element, props } = this;
+    const { onCopy } = props;
+    this.button = factory(element, props);
     this.button.onCopy(e => onCopy(e));
   }
 
@@ -55,9 +56,10 @@ NavButton.defaultProps = {
   actionTitle: "click to copy address",
   onCopy: () => {},
   className: "",
-  options: {},
+  position: "bottom",
   closeText: "Thanks! Got it",
-  size: ""
+  size: "",
+  type: "copy"
 };
 
 export default NavButton;
