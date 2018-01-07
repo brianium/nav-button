@@ -183,9 +183,9 @@ The following is a template for embeddable nav buttons:
   for (var k in attrs) {
     b.setAttribute("data-" + k, attrs[k]);
   }
-  target === self.nextElementSibling
-    ? p.insertBefore(b.node, s.nextElementSibling)
-    : p.appendChild(b.node);
+  s.nextElementSibling
+    ? p.insertBefore(b, s.nextElementSibling)
+    : p.appendChild(b);
 })(document, "nav-button-widget");
 </script>
 ```
