@@ -1,5 +1,5 @@
 export const DEFAULT_OPTIONS = {
-  text: "Tip with NAV",
+  text: "Tip with Nav",
   alt: false,
   actionText: "Copy Address",
   actionTitle: "click to copy address",

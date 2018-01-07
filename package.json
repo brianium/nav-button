@@ -11,7 +11,7 @@
     "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "build:site":
-      "npm run clean && npm run build && mkdir site && cp -r dev/ site && cp dist/{nav-button.js,nav-button-react.js,nav-button.css} site && bash scripts/site-replace.sh",
+      "npm run clean && npm run build && mkdir site && cp -r dev/ site && cp dist/{nav-button.js,nav-button-react.js,nav-embed.js,nav-button.css} site && bash scripts/site-replace.sh",
     "clean": "rm -rf dist && rm -rf site",
     "deploy:site": "push-dir --dir=site --branch=gh-pages",
     "prepublishOnly": "npm run clean && npm run build"

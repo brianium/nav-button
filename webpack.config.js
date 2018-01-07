@@ -3,7 +3,8 @@ const path = require("path");
 module.exports = {
   entry: {
     "nav-button": "./src/index.js",
-    "nav-button-react": "./src/react/index.js"
+    "nav-button-react": "./src/react/index.js",
+    "nav-embed": "./src/embed/index.js"
   },
 
   output: {

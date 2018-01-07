@@ -157,6 +157,43 @@ The `NavQrButton` supports all the props of `NavButton`, but additionally suppor
 }
 ```
 
+### Embeddable buttons
+
+The following is a template for embeddable nav buttons:
+
+```html
+<script type="text/javascript">
+(function(d, id) {
+  if (!d.getElementById(id)) {
+    var js;
+    js = d.createElement("script");
+    js.id = id;
+    js.src = "//cdn.rawgit.com/brianium/nav-button/gh-pages/nav-embed.js";
+    d.head.appendChild(js);
+  }
+  var s = d.scripts[d.scripts.length - 1];
+  var p = s.parentNode;
+  var b = d.createElement("div");
+  var attrs = {
+    text: "Tip with Nav",
+    "action-text": "Copy Address",
+    address: "my-address"
+  };
+  b.className = "nav-button-placeholder";
+  for (var k in attrs) {
+    b.setAttribute("data-" + k, attrs[k]);
+  }
+  target === self.nextElementSibling
+    ? p.insertBefore(b.node, s.nextElementSibling)
+    : p.appendChild(b.node);
+})(document, "nav-button-widget");
+</script>
+```
+
+The `attrs` object will be set as data attributes for the script to use.
+The following attributes are supported, and map to standard options:
+`address`, `text`, `action-text`, `alt`, `type`, `size`.
+
 ### Templates
 
 The following templates should be used for rendering markup. These can be used if you
