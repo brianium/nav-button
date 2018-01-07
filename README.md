@@ -69,6 +69,35 @@ import factory from 'nav-button';
 factory('#my-tip-button');
 ```
 
+There is aslo a `createButton` function that can be used to return a `NavButton` instance that can be appended.
+
+```js
+import { createButton } from 'nav-button';
+
+const btn = createButton({ address: 'NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt' });
+
+document.body.appendChild(btn.node);
+```
+
+The `btn.node` property represents a DOM element that can be appended.
+
+Supported options for the `createButton` function are as follows:
+
+```js
+{
+  text: "Tip with NAV", // what text the button contains
+  alt: false, // whether or not to use the alternative blue button style
+  actionText: "Copy Address", // what text is rendered when hovered
+  actionTitle: "click to copy address", // the title attribute for the button
+  onCopy: () => {}, // called when the address is copied
+  className: "", // additional class(s) to add to the button
+  position: "bottom", // direction the QR code opens to - supports "bottom" and "right"
+  closeText: "Thanks! Got it", // text displayed while a QR code is open
+  size: "", // size of the button, supports "sm" and "md" values
+  type: "copy" // can be "copy" or "qr"
+};
+```
+
 ### React
 
 `nav-button` ships with a couple of React components for use as well. You can

@@ -40,7 +40,7 @@ export default function nav(elementOrSelector, opts = DEFAULT_OPTIONS) {
  */
 export function createButton(opts = {}) {
   const withDefaults = options(opts);
-  const { type } = withDefaults;
+  const { type, onCopy, className } = withDefaults;
   const markup = type === "qr" ? tpl.qrButton(opts) : tpl.defaultButton(opts);
   const container = document.createElement("div");
   container.innerHTML = markup;
@@ -51,5 +51,11 @@ export function createButton(opts = {}) {
     element = element.firstElementChild;
   }
 
-  return nav(element, withDefaults);
+  if (className) {
+    element.className = `${element.className} ${className}`.trim();
+  }
+
+  const instance = nav(element, withDefaults);
+  instance.onCopy(onCopy);
+  return instance;
 }
