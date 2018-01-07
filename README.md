@@ -1,6 +1,6 @@
 # nav-button
 
-Buttons for simply sharing [NAV Coin](https://navcoin.org/) addresses.
+Buttons for simply sharing [Nav Coin](https://navcoin.org/) addresses.
 
 <p align="center">
   <img src="readme-img.png?raw=true" alt="nav button - buttons for use" />
@@ -48,9 +48,9 @@ var factory = window['nav-button'].default;
 
 ## Usage
 
-NAV buttons are really just styled markup. The React components are probably
+Nav buttons are really just styled markup. The React components are probably
 the easiest to use, but whether you are using React or some other implementation,
-you will want to include the NAV button css located in `nav-button/dist/nav-button.css`.
+you will want to include the Nav button css located in `nav-button/dist/nav-button.css`.
 
 ```html
 <link rel="stylesheet" href="nav-button/dist/nav-button.css">
@@ -83,7 +83,7 @@ import { NavButton } from 'nav-button/dist/nav-button-react';
 const MyComponent = (props) => (
   <NavButton
     address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"
-    text="Tip with NAV"
+    text="Tip with Nav"
     actionText="Copy Address"
     onCopy={(e) => console.log(e.text)} //e.text is you address
   />
@@ -96,7 +96,7 @@ And `NavQrButton` is similar:
 const MyComponent = () => (
   <NavQrButton
     address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"
-    text="Pay with NAV"
+    text="Pay with Nav"
     actionText="Show QR Code"
     onCopy={(e) => console.log(e.text)}
     closeText="Thanks! Got it"
@@ -109,7 +109,7 @@ The following props are supported for the `NavButton`:
 
 ```js
 {
-  text: "Tip with NAV",
+  text: "Tip with Nav",
   alt: false, // set to true to use the alternative blue buttons
   actionText: "Copy Address",
   actionTitle: "click to copy address",
@@ -132,13 +132,13 @@ The `NavQrButton` supports all the props of `NavButton`, but additionally suppor
 
 The following templates should be used for rendering markup. These can be used if you
 want to perform rendering on the server side. They are meant to be copied
-as is - but you should at least replace the NAV address :)
+as is - but you should at least replace the Nav address :)
 
 A default button looks like this:
 
 ```html
 <button class="nav-btn" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
-  <span class="nav-btn__text">Tip with NAV</span>
+  <span class="nav-btn__text">Tip with Nav</span>
   <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
 </button>
 ```
@@ -152,7 +152,7 @@ can copy and base the following as is:
 ```html
 <div class="nav-btn-container">
   <button class="nav-btn" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
-    <span class="nav-btn__text">Pay with NAV</span>
+    <span class="nav-btn__text">Pay with Nav</span>
     <span class="nav-btn__action-text">Show QR Code</span>
   </button>
   <div class="nav-btn-qr">
@@ -184,7 +184,7 @@ alongside the `nav-btn` class.
 
 ```html
 <button class="nav-btn nav-btn--alt" data-address="" data-clipboard-text="">
-  <span class="nav-btn__text">Pay with NAV</span>
+  <span class="nav-btn__text">Pay with Nav</span>
   <span class="nav-btn__action-text">Show QR Code</span>
 </button>
 ```
@@ -226,7 +226,7 @@ $ yarn deploy:site
 
 ## Integrations
 
-* NAV Button WordPress Plugin (Coming Soon)
+* Nav Button WordPress Plugin (Coming Soon)
 
 ## Contributing
 
@@ -234,7 +234,7 @@ Bug reports, feature requests, and pull requests are all welcome.
 
 ## Donating
 
-If you find this work useful, [NAV Coin](https://navcoin.org/) tips are always appreciated.
+If you find this work useful, [Nav Coin](https://navcoin.org/) tips are always appreciated.
 
 My address is in every single demo of this button:
 

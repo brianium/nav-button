@@ -38,6 +38,17 @@ pre {
   color: #fff;
 }
 
+.container--primary a,
+.container--primary a:link,
+.container--primary a:visited {
+  color: #f5d58f;
+}
+
+.container--primary a:hover,
+.container--primary a:active {
+  color: #f0c35f;
+}
+
 .container--secondary {
   background-color: hsl(263, 38%, 53%);
   color: #fff;
