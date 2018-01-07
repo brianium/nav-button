@@ -20,6 +20,13 @@ export default class NavButton {
   }
 
   /**
+   * Get the node representing the entire button
+   */
+  get node() {
+    return this.element;
+  }
+
+  /**
    * Template method that treats the nav button element
    * as a clipboard element - that is it will copy its text content -
    * the nav coin address to the clipboard

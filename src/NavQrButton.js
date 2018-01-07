@@ -39,6 +39,13 @@ export default class NavQrButton extends NavButton {
   }
 
   /**
+   * QR node is the container element containing the button
+   */
+  get node() {
+    return this.parent;
+  }
+
+  /**
    * Template method that treats the qr code popover's clipboard button
    * as the clipboard trigger
    */
