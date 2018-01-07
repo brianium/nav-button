@@ -18,8 +18,8 @@ $ npm install --save nav-button
 $ yarn add nav-button
 ```
 
-The `nav-button` library is build as a UMD module, so you should be able to use
-it multiple ways.
+The `nav-button` library is built as a UMD module, so you can use it multiple ways - choose
+whichever method suits your project best.
 
 CommonJS:
 
@@ -35,8 +35,9 @@ import factory from 'nav-button';
 
 Window:
 
-To use it on the window, you will need to include the script in the `head` of
-your document.
+To use it on the window, you will need to include `nav-button` via a script tag in your document.
+
+The `window` variable will have two properties: `nav-button`, and `nav-button-react`.
 
 ```html
 <script src="/nav-button/dist/index.js"></script>
@@ -118,20 +119,20 @@ The following props are supported for the `NavButton`:
 };
 ```
 
-The `NavQrButton` supports all the props of `NavButton`, but additionaly supports the following:
+The `NavQrButton` supports all the props of `NavButton`, but additionally supports the following props:
 
 ```js
 {
   position: "bottom", // controls where the qr code opens - can be bottom or right - defaults to bottom
-  closeText: "Thanks! Got it"
+  closeText: "Thanks! Got it", // what text is displayed while the qr code is displayed
 }
 ```
 
 ### Templates
 
 The following templates should be used for rendering markup. These can be used if you
-want to perform rendering on server side. They are meant to be copied
-as is, with the exception of including your own NAV address:
+want to perform rendering on the server side. They are meant to be copied
+as is - but you should at least replace the NAV address :)
 
 A default button looks like this:
 
@@ -145,7 +146,8 @@ A default button looks like this:
 The `data-address` and `data-clipboard-text` are important if you want your QR codes
 to render correctly, and if you want to support copy to clipboard functionality.
 
-Markup for a QR code supported button is a little more involved:
+Markup for a QR code supported button is a little more involved, but like the default button you
+can copy and base the following as is:
 
 ```html
 <div class="nav-btn-container">
@@ -177,7 +179,7 @@ Markup for a QR code supported button is a little more involved:
 </div>
 ```
 
-If you would like to use the alternative blue button, simply add the `nav-btn--alt` class
+If you would like to use the alternative blue button style, simply add the `nav-btn--alt` class
 alongside the `nav-btn` class.
 
 ```html
@@ -185,6 +187,13 @@ alongside the `nav-btn` class.
   <span class="nav-btn__text">Pay with NAV</span>
   <span class="nav-btn__action-text">Show QR Code</span>
 </button>
+```
+And in the case of the QR button, you will want to add `nav-btn-container--alt` as well:
+
+```html
+<div class="nav-btn-container nav-btn-container--alt">
+  <!-- rest of button markup -->
+</div>
 ```
 
 ## Development
