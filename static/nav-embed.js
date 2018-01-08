@@ -46,6 +46,6 @@
     }
   };
   js.src =
-    "//cdn.rawgit.com/brianium/nav-button/3fff226b88f40da6945ea9bc197da1d6828676ca/nav-button.js";
+    "//cdn.rawgit.com/brianium/nav-button/d31f5b58dd50cea6f920ed141f8a40d1c07104c2/nav-button.js";
   document.head.appendChild(js);
 })();
