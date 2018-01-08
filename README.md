@@ -168,7 +168,7 @@ The following is a template for embeddable nav buttons:
     var js;
     js = d.createElement("script");
     js.id = id;
-    js.src = "//cdn.rawgit.com/brianium/nav-button/gh-pages/nav-embed.js";
+    js.src = "//cdn.rawgit.com/brianium/nav-button/3fff226b88f40da6945ea9bc197da1d6828676ca/nav-embed.js";
     d.head.appendChild(js);
   }
 }(document, 'nav-embed-js'));

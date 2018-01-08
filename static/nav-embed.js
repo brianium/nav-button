@@ -13,31 +13,6 @@
  * </div>
  */
 (function() {
-  function readOptions(element) {
-    return {
-      address: element.dataset.address,
-      text: element.dataset.text,
-      alt: element.dataset.alt === "true" ? true : false,
-      actionText: element.dataset.actionText,
-      type: element.dataset.type,
-      size: element.dataset.size
-    };
-  }
-
-  function replace() {
-    var className = "nav-btn-placeholder";
-    var createButton = window["nav-button"].createButton;
-    var placeholders = document.getElementsByClassName(className);
-    var len = placeholders.length;
-    for (var i = 0; i < len; i++) {
-      var placeholder = placeholders[i];
-      var opts = readOptions(placeholder);
-      var parent = placeholder.parentNode;
-      var btn = createButton(opts);
-      parent.replaceChild(btn.node, placeholder);
-    }
-  }
-
   function appendStyle() {
     var href = "//cdn.rawgit.com/brianium/nav-button/gh-pages/nav-button.css";
     var link = document.createElement("link");
@@ -50,15 +25,29 @@
   appendStyle();
   var js = document.createElement("script");
   js.onload = function() {
-    console.log("loaded");
-    if (document.readystate === "complete") {
-      replace();
-    } else {
-      document.addEventListener("DOMContentLoaded", function() {
-        replace();
-      });
+    function replace(element) {
+      var className = "nav-btn-placeholder";
+      var createButton = window["nav-button"].createButton;
+      var placeholders = document.getElementsByClassName(className);
+      var len = placeholders.length;
+      for (var i = 0; i < len; i++) {
+        var element = placeholders[i];
+        var opts = {
+          address: element.dataset.address,
+          text: element.dataset.text,
+          alt: element.dataset.alt === "true" ? true : false,
+          actionText: element.dataset.actionText,
+          type: element.dataset.type,
+          size: element.dataset.size
+        };
+        var parent = element.parentNode;
+        var btn = createButton(opts);
+        parent.replaceChild(btn.node, element);
+      }
     }
+    replace();
   };
-  js.src = "//cdn.rawgit.com/brianium/nav-button/gh-pages/nav-button.js";
+  js.src =
+    "//cdn.rawgit.com/brianium/nav-button/3fff226b88f40da6945ea9bc197da1d6828676ca/nav-button.js";
   document.head.appendChild(js);
 })();
