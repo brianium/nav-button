@@ -29,7 +29,7 @@ function readOptions(element) {
 }
 
 function replace() {
-  var className = "nav-button-placeholder";
+  var className = "nav-btn-placeholder";
   var placeholders = document.getElementsByClassName(className);
   var len = placeholders.length;
   for (var i = 0; i < len; i++) {
@@ -51,4 +51,4 @@ function appendStyle() {
 
 // execute
 appendStyle();
-document.addEventListener("DOMContentLoaded", replace);
+window.addEventListener("load", replace);

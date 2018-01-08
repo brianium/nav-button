@@ -171,23 +171,9 @@ The following is a template for embeddable nav buttons:
     js.src = "//cdn.rawgit.com/brianium/nav-button/gh-pages/nav-embed.js";
     d.head.appendChild(js);
   }
-  var s = d.scripts[d.scripts.length - 1];
-  var p = s.parentNode;
-  var b = d.createElement("div");
-  var attrs = {
-    text: "Tip with Nav",
-    "action-text": "Copy Address",
-    address: "my-address"
-  };
-  b.className = "nav-button-placeholder";
-  for (var k in attrs) {
-    b.setAttribute("data-" + k, attrs[k]);
-  }
-  s.nextElementSibling
-    ? p.insertBefore(b, s.nextElementSibling)
-    : p.appendChild(b);
-})(document, "nav-button-widget");
+});
 </script>
+<div class="nav-btn-placeholder" data-text="Tip with Nav" data-action-text="Copy Address" address="my-address"></div>
 ```
 
 The `attrs` object will be set as data attributes for the script to use.
