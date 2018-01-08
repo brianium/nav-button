@@ -3,8 +3,7 @@ const path = require("path");
 module.exports = {
   entry: {
     "nav-button": "./src/index.js",
-    "nav-button-react": "./src/react/index.js",
-    "nav-embed": "./src/embed/index.js"
+    "nav-button-react": "./src/react/index.js"
   },
 
   output: {
@@ -55,6 +54,6 @@ module.exports = {
   devServer: {
     port: 9000,
     open: true,
-    openPage: "/dev"
+    openPage: "/static"
   }
 };

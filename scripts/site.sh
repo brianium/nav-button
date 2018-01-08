@@ -1,3 +1,12 @@
+# make the site directory and copy everything from the static directory over
+mkdir site && cp -r static/ site
+
+# copy compiled files over to the site directory
+cp dist/{nav-button.js,nav-button-react.js,nav-button.css} site
+
+# minifiy embed script
+node_modules/.bin/uglifyjs -c -m -o site/nav-embed.js -- site/nav-embed.js
+
 # strip dev prefixed paths to work with gh pages
 sed -i "" 's/\/dev\///g' site/index.html
 

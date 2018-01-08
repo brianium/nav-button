@@ -171,7 +171,7 @@ The following is a template for embeddable nav buttons:
     js.src = "//cdn.rawgit.com/brianium/nav-button/gh-pages/nav-embed.js";
     d.head.appendChild(js);
   }
-});
+}(document, 'nav-embed-js'));
 </script>
 <div class="nav-btn-placeholder" data-text="Tip with Nav" data-action-text="Copy Address" address="my-address"></div>
 ```
