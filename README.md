@@ -179,7 +179,7 @@ The following is a template for embeddable nav buttons:
 The data attributes of the div element map to standard options, but use hyphens
 instead of camel case. The following options are supported:
 
-`address`, `text`, `action-text`, `alt`, `type`, `size`.
+`address`, `text`, `action-text`, `alt`, `type`, `size`, `class-name`.
 
 ### Templates
 
