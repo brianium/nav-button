@@ -168,16 +168,17 @@ The following is a template for embeddable nav buttons:
     var js;
     js = d.createElement("script");
     js.id = id;
-    js.src = "//cdn.rawgit.com/brianium/nav-button/3fff226b88f40da6945ea9bc197da1d6828676ca/nav-embed.js";
+    js.src = "//cdn.rawgit.com/brianium/nav-button/534188641248b03ecb74df7acdcf432d779a77c9/nav-embed.js";
     d.head.appendChild(js);
   }
 }(document, 'nav-embed-js'));
 </script>
-<div class="nav-btn-placeholder" data-text="Tip with Nav" data-action-text="Copy Address" address="my-address"></div>
+<div class="nav-btn-placeholder" data-text="Tip with Nav" data-action-text="Copy Address" data-address="my-address"></div>
 ```
 
-The `attrs` object will be set as data attributes for the script to use.
-The following attributes are supported, and map to standard options:
+The data attributes of the div element map to standard options, but use hyphens
+instead of camel case. The following options are supported:
+
 `address`, `text`, `action-text`, `alt`, `type`, `size`.
 
 ### Templates
