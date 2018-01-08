@@ -10,6 +10,7 @@
  *  data-type="copy"
  *  data-size="lg"
  *  data-class-name="my-class"
+ *  data-position="bottom"
  * >
  * </div>
  */
@@ -39,13 +40,13 @@
         type: element.dataset.type,
         size: element.dataset.size,
         className: element.dataset.className,
+        position: element.dataset.position || 'bottom'
       };
       var parent = element.parentNode;
       var btn = createButton(opts);
       parent.replaceChild(btn.node, element);
     }
   };
-  js.src =
-    "//cdn.rawgit.com/brianium/nav-button/d31f5b58dd50cea6f920ed141f8a40d1c07104c2/nav-button.js";
+  js.src = "//cdn.rawgit.com/brianium/nav-button/d31f5b58dd50cea6f920ed141f8a40d1c07104c2/nav-button.js";
   document.head.appendChild(js);
 })();

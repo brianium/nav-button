@@ -168,7 +168,7 @@ The following is a template for embeddable nav buttons:
     var js;
     js = d.createElement("script");
     js.id = id;
-    js.src = "//cdn.rawgit.com/brianium/nav-button/d31f5b58dd50cea6f920ed141f8a40d1c07104c2/nav-embed.js";
+    js.src = "//cdn.rawgit.com/brianium/nav-button/182e7550f9322ba55ecce1b8246a4ba0bc12d3e1/nav-embed.js";
     d.head.appendChild(js);
   }
 }(document, 'nav-embed-js'));
@@ -179,7 +179,7 @@ The following is a template for embeddable nav buttons:
 The data attributes of the div element map to standard options, but use hyphens
 instead of camel case. The following options are supported:
 
-`address`, `text`, `action-text`, `alt`, `type`, `size`, `class-name`.
+`address`, `text`, `action-text`, `alt`, `type`, `size`, `class-name`, `position`.
 
 ### Templates
 

@@ -1,15 +1,8 @@
-const rectCache = new WeakMap(null);
-
 /**
  * Returns the DOMRect for an element. Caches all results
  */
 export function rect(element) {
-  if (rectCache.has(element)) {
-    return rectCache.get(element);
-  }
-  const r = element.getBoundingClientRect();
-  rectCache.set(element, r);
-  return r;
+  return element.getBoundingClientRect();
 }
 
 /**
@@ -17,13 +10,14 @@ export function rect(element) {
  *
  * @return {Object}
  */
-export function relativePosition(element) {
+export function relativeRect(element) {
   const { parentNode } = element;
   const parentRect = rect(parentNode);
   const elementRect = rect(element);
   return {
     left: elementRect.left - parentRect.left,
     right: elementRect.right - parentRect.right,
-    top: elementRect.top - parentRect.top
+    top: elementRect.top - parentRect.top,
+    width: elementRect.width
   };
 }

@@ -1,7 +1,7 @@
 import QRCode from "qrcode";
 import Clipboard from "clipboard";
 import NavButton from "./NavButton";
-import { relativePosition, rect } from "./util";
+import { relativeRect } from "./util";
 
 /**
  * @todo attempt to calculate these - animating the popover makes
@@ -104,21 +104,20 @@ export default class NavQrButton extends NavButton {
     const { position } = options;
 
     // read position from elements
-    const elementPos = relativePosition(element);
-    const elementRect = rect(element);
-    const elementCenter = elementPos.left + elementRect.width / 2;
+    const elementRect = relativeRect(element);
+    const elementCenter = elementRect.left + elementRect.width / 2;
 
     // init offsets
     const marginLeft = 15;
     const left =
       position === "right"
-        ? elementPos.left + elementRect.width + marginLeft
+        ? elementRect.left + elementRect.width + marginLeft
         : elementCenter - POPOVER_WIDTH / 2;
 
     const top =
       position === "right"
-        ? elementPos.top - POPOVER_MIDDLE
-        : elementPos.bottom;
+        ? elementRect.top - POPOVER_MIDDLE
+        : elementRect.bottom;
 
     // apply position
     popover.style.left = `${left}px`;
