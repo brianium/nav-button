@@ -14,7 +14,7 @@ function classes(props) {
 }
 
 const NavQrButton = props => (
-  <div class={classes(props)}>
+  <div className={classes(props)}>
     <NavButton {...props} type="qr" />
     <div className="nav-btn-qr">
       <canvas />
