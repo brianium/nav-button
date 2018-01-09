@@ -16,6 +16,7 @@ export default class NavButton {
     this.options = options;
     this.address = this.element.dataset.address;
     this.clipboard = this.createClipboard(element);
+    this.onClick = this.onClick.bind(this);
     this.listen();
   }
 
@@ -53,7 +54,16 @@ export default class NavButton {
    */
   listen() {
     const { element } = this;
-    element.addEventListener("click", e => this.onClick(e));
+    element.addEventListener("click", this.onClick);
+  }
+
+  /**
+   * Removes event listeners attached to the nav button
+   */
+  removeListeners() {
+    const { element } = this;
+    element.removeEventListener("click", this.onClick);
+    this.clipboard.off("success");
   }
 
   /**

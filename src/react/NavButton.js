@@ -1,12 +1,19 @@
 import React, { Component } from "react";
+import isEqual from "lodash.isequal";
 import factory from "../";
 
 class NavButton extends Component {
   componentDidMount() {
-    const { element, props } = this;
-    const { onCopy } = props;
-    this.button = factory(element, props);
-    this.button.onCopy(e => onCopy(e));
+    const { props } = this;
+    this.navifiy(props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { props } = this;
+    if (isEqual(props, nextProps)) {
+      return;
+    }
+    this.navifiy(nextProps);
   }
 
   className() {
@@ -22,6 +29,16 @@ class NavButton extends Component {
       classes.push("nav-btn--sm");
     }
     return classes.join(" ").trim();
+  }
+
+  navifiy(props) {
+    const { element } = this;
+    const { onCopy } = props;
+    if (this.button) {
+      this.button.removeListeners();
+    }
+    this.button = factory(element, props);
+    this.button.onCopy(e => onCopy(e));
   }
 
   render() {
