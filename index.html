@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nav Buttons - Share Your Nav Address</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="nav-button.css">
+  </head>
+  <body>
+    <a href="https://github.com/brianium/nav-button">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+    </a>
+    <div class="container">
+      <div class="row hero">
+        <div class="col-8 mx-auto">
+          <img src="images/logo.png" alt="Nav Coin" class="img-fluid mx-auto d-block mb-5">
+          <p class="text-center callout mb-5">
+            Buttons for Use
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container--primary">
+      <div class="row justify-content-center pt-5 pb-5">
+        <div class="col-md-4">
+          <h3>Click to Copy</h3>
+          <p>
+            <a href="https://navcoin.org" target="__blank">Nav Coin</a> is a coin for people. Nav buttons seek to make it easier for people
+            to send Nav as a way of thanks! The default button provides a simple copy to clipboard
+            for your Nav address. Try it!
+          </p>
+          <button id="default-nav" class="nav-btn mx-auto mb-3" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+            <span class="nav-btn__text">Tip with Nav</span>
+            <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
+          </button>
+
+          <p class="copy-text" id="nav-btn-default">
+            Copied!
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h3>Use QR Codes</h3>
+          <p>
+            Nav buttons also support QR codes for even easier sharing. QR code enabled
+            buttons take up a little more space, but provide copy functionality as well as the
+            convenience of a QR code.
+          </p>
+          <div class="nav-btn-container mb-3">
+            <button id="qr-nav" class="nav-btn mx-auto demo-btn--qr" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+              <span class="nav-btn__text">Pay with Nav</span>
+              <span class="nav-btn__action-text">Show QR Code</span>
+            </button>
+            <div class="nav-btn-qr">
+              <canvas></canvas>
+              <div class="nav-btn-qr__input">
+                <input class="nav-btn-qr__input__field" type="text" value="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" readonly />
+                <button class="nav-btn-qr__input__btn">
+                  <svg
+                    aria-hidden="true"
+                    data-icon="clipboard"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"
+                  >
+                    <path
+                      d="M336 64h-80c0-35.29-28.71-64-64-64s-64 28.71-64 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h288c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V118a6 6 0 0 1 6-6h42v36c0 6.627 5.373 12 12 12h168c6.627 0 12-5.373 12-12v-36h42a6 6 0 0 1 6 6v340a6 6 0 0 1-6 6zM192 40c13.255 0 24 10.745 24 24s-10.745 24-24 24-24-10.745-24-24 10.745-24 24-24"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <span class="nav-btn-qr__arrow"></span>
+              <a class="nav-btn-qr__link" target="__blank" href="https://navcoin.org/">navcoin.org</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-4 order-md-1 order-2">
+          <ul class="button-list">
+            <li>
+              <button id="default-nav" class="nav-btn mx-auto mb-3 demo-btn" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+                <span class="nav-btn__text">Donate with Nav</span>
+                <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
+              </button>
+            </li>
+            <li>
+              <button id="default-nav" class="nav-btn nav-btn--md mx-auto mb-3 demo-btn" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+                <span class="nav-btn__text">Donate with Nav</span>
+                <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
+              </button>
+            </li>
+            <li>
+              <button id="default-nav" class="nav-btn nav-btn--sm mx-auto demo-btn" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+                <span class="nav-btn__text">Donate with Nav</span>
+                <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 order-1 order-md-2">
+          <h3>All Shapes and Sizes</h3>
+          <p>
+            Nav buttons can accommodate lots of different text, and can be displayed
+            at various sizes. Pick a button size that is the right fit.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container--secondary">
+      <div class="row pt-5 pb-4">
+        <div class="col-12">
+          <h2>Alternative Buttons</h2>
+          <p class="callout callout--section">
+            If the classic Nav purple doesn't tickle your fancy, these alt buttons just might
+            do the trick.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-4">
+          <h3>Click to Copy</h3>
+          <button id="default-nav-alt" class="nav-btn nav-btn--alt mx-auto mb-3" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+            <span class="nav-btn__text">Tip with Nav</span>
+            <span title="click to copy address" class="nav-btn__action-text">Copy Address</span>
+          </button>
+
+          <p class="copy-text" id="nav-btn-default-alt">
+            Copied!
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h3>Use QR Codes</h3>
+          <div class="nav-btn-container nav-btn-container--alt mb-3">
+            <button id="qr-nav-alt" class="nav-btn nav-btn--alt mx-auto demo-btn--qr" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" data-clipboard-text="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt">
+              <span class="nav-btn__text">Pay with Nav</span>
+              <span class="nav-btn__action-text">Show QR Code</span>
+            </button>
+            <div class="nav-btn-qr">
+              <canvas></canvas>
+              <div class="nav-btn-qr__input">
+                <input class="nav-btn-qr__input__field" type="text" value="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt" readonly />
+                <button class="nav-btn-qr__input__btn">
+                  <svg
+                    aria-hidden="true"
+                    data-icon="clipboard"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"
+                  >
+                    <path
+                      d="M336 64h-80c0-35.29-28.71-64-64-64s-64 28.71-64 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h288c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V118a6 6 0 0 1 6-6h42v36c0 6.627 5.373 12 12 12h168c6.627 0 12-5.373 12-12v-36h42a6 6 0 0 1 6 6v340a6 6 0 0 1-6 6zM192 40c13.255 0 24 10.745 24 24s-10.745 24-24 24-24-10.745-24-24 10.745-24 24-24"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <span class="nav-btn-qr__arrow"></span>
+              <a class="nav-btn-qr__link" target="__blank" href="https://navcoin.org/">navcoin.org</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row justify-content-center pt-5 pb-4">
+        <div class="col-md-12">
+          <h2>Components</h2>
+          <p class="callout callout--section">
+            Everyone goes nuts for components. The Nav buttons package comes FULLY LOADED
+            with <a target="__blank" href="https://reactjs.org/">React</a> components.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-4">
+          <div id="react-nav-btn" class="react-container mb-3"></div>
+          <p class="copy-text" id="nav-btn-default-react">
+            Copied!
+          </p>
+        </div>
+        <div class="col-md-4">
+          <div id="react-nav-qr" class="react-container mb-3"></div>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-4">
+<pre><code class="javascript">import React from 'react';
+import { NavButton } from 'nav-button/dist/nav-button-react';
+
+const MyComponent = () =&gt; (
+  &lt;NavButton
+    address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"
+    text="Tip with Nav"
+    actionText="Copy Address"
+    onCopy={copyHandler}
+  /&gt;
+);
+</code></pre>
+        </div>
+        <div class="col-md-4">
+<pre><code class="javascript">import React from 'react';
+import { NavQrButton } from 'nav-button/dist/nav-button-react';
+
+const MyComponent = () =&gt; (
+  &lt;NavQrButton
+    address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"
+    text="Pay with Nav"
+    actionText="Show QR Code"
+    onCopy={copyHandler}
+    closeText="Thanks! Got it"
+    alt={true}
+  /&gt;
+);
+</code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container--primary">
+      <div class="row justify-content-center pt-5 pb-4">
+        <div class="col-md-12">
+          <h2>Embeddable Buttons</h2>
+          <p class="callout callout--section">
+            Sometimes you just want to paste some code and move on with your life. Nav buttons have you covered.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-4">
+          <script type="text/javascript">
+          (function(d, id) {
+  if (!d.getElementById(id)) {
+    var js;
+    js = d.createElement("script");
+    js.id = id;
+    js.src =
+      "//cdn.rawgit.com/brianium/nav-button/9073d20e5eb39fe97c48e0e0a076b69ed42e2f2c/nav-embed.js";
+    d.head.appendChild(js);
+  }
+})(document, "nav-embed-js");
+</script>
+          <div class="nav-btn-placeholder" data-class-name="mx-auto mb-3" data-text="Tip with Nav" data-action-text="Copy Address" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"></div>
+        </div>
+        <div class="col-md-4">
+          <script type="text/javascript">
+          (function(d, id) {
+  if (!d.getElementById(id)) {
+    var js;
+    js = d.createElement("script");
+    js.id = id;
+    js.src =
+      "//cdn.rawgit.com/brianium/nav-button/9073d20e5eb39fe97c48e0e0a076b69ed42e2f2c/nav-embed.js";
+    d.head.appendChild(js);
+  }
+})(document, "nav-embed-js");
+</script>
+          <div class="nav-btn-placeholder" data-class-name="mx-auto mb-3" data-text="Pay with Nav" data-action-text="Show QR Code" data-type="qr" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"></div>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-4">
+<pre><code class="html">&lt;script type="text/javascript"&gt;
+(function(d, id) {
+  if (!d.getElementById(id)) {
+    var js;
+    js = d.createElement("script");
+    js.id = id;
+    js.src = "//cdn.rawgit.com/brianium/nav-button/9073d20e5eb39fe97c48e0e0a076b69ed42e2f2c/nav-embed.js";
+    d.head.appendChild(js);
+  }
+}(document, 'nav-embed-js'));
+&lt;/script&gt;
+&lt;div class="nav-btn-placeholder" data-class-name="mx-auto mb-3" data-text="Tip with Nav" data-action-text="Copy Address" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"&gt;&lt;/div&gt;
+</code></pre>
+        </div>
+        <div class="col-md-4">
+<pre><code class="html">&lt;script type="text/javascript"&gt;
+(function(d, id) {
+  if (!d.getElementById(id)) {
+    var js;
+    js = d.createElement("script");
+    js.id = id;
+    js.src = "//cdn.rawgit.com/brianium/nav-button/9073d20e5eb39fe97c48e0e0a076b69ed42e2f2c/nav-embed.js";
+    d.head.appendChild(js);
+  }
+}(document, 'nav-embed-js'));
+&lt;/script&gt;
+&lt;div class="nav-btn-placeholder" data-class-name="mx-auto mb-3" data-text="Pay with Nav" data-action-text="Show QR Code" data-type="qr" data-address="NhN5m1uE1QwySphDJVN4nc6WhiAB6TFjxt"&gt;&lt;/div&gt;
+</code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row justify-content-center pt-5 pb-5">
+        <div class="col-md-12">
+          <h2>Thank You!</h2>
+          <p class="callout callout--section">
+            If you find these useful, please consider sending me some Nav. All of these demo buttons
+            are pointing to my address.
+          </p>
+          <p>
+            I plan to develop on these further - including plugins for easily dropping them into popular
+            content management platforms, starting with a WordPress plugin.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container--footer">
+      <div class="row justify-content-center align-items-center">
+        <div class="made-with-love col-md-6">
+          <span>Made with</span>
+          <svg data-fa-processed="" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-heart fa-w-18 fa-2x"><path d="M414.9 24C361.8 24 312 65.7 288 89.3 264 65.7 214.2 24 161.1 24 70.3 24 16 76.9 16 165.5c0 72.6 66.8 133.3 69.2 135.4l187 180.8c8.8 8.5 22.8 8.5 31.6 0l186.7-180.2c2.7-2.7 69.5-63.5 69.5-136C560 76.9 505.7 24 414.9 24z"></path></svg>
+          <span>
+            by <a href="https://github.com/brianium" target="__blank">@brianium</a>
+          </span>
+        </div>
+        <div class="col-md-6">
+          <nav class="links">
+            <ul>
+              <li>
+                <a target="__blank" href="https://github.com/brianium/nav-button">full documentation</a>
+              </li>
+              <li>
+                <a target="__blank" href="https://fontawesome.com/">icons by font awesome 5</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="nav-button.js"></script>
+    <script src="nav-button-react.js"></script>
+    <script src="example.js"></script>
+  </body>
+</html>
