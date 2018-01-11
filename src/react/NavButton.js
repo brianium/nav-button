@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import isEqual from "lodash.isequal";
 import factory from "../";
+import NavQrButton from '../NavQrButton';
 
 class NavButton extends Component {
   componentDidMount() {
@@ -34,12 +35,23 @@ class NavButton extends Component {
     return classes.join(" ").trim();
   }
 
+  resetButton() {
+    this.button.removeListeners();
+    if (this.button instanceof NavQrButton) {
+      this.button.hasQrCode() && this.button.clearQrCode();
+      const qr = this.button.node.querySelector('.nav-btn-qr');
+      qr.style.cssText = '';
+    }
+  }
+
   navifiy(props) {
     const { element } = this;
     const { onCopy } = props;
+
     if (this.button) {
-      this.button.removeListeners();
+      this.resetButton();
     }
+
     this.button = factory(element, props);
     this.button.onCopy(e => onCopy(e));
   }
