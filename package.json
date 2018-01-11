@@ -1,6 +1,6 @@
 {
   "name": "nav-button",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A simple NAV coin widget for displaying your nav address",
   "main": "dist/nav-button.js",
   "repository": "https://github.com/brianium/nav-button",

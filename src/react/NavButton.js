@@ -17,7 +17,7 @@ class NavButton extends Component {
   }
 
   className() {
-    const { className, alt, size } = this.props;
+    const { className, alt, size, type } = this.props;
     const classes = [className, "nav-btn"];
     if (alt) {
       classes.push("nav-btn--alt");
@@ -27,6 +27,9 @@ class NavButton extends Component {
     }
     if (size === "sm") {
       classes.push("nav-btn--sm");
+    }
+    if (type === 'qr') {
+      classes.push('nav-btn--qr');
     }
     return classes.join(" ").trim();
   }
