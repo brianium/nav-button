@@ -96,6 +96,18 @@ export default class NavQrButton extends NavButton {
     popover.classList.add(transition);
   }
 
+  topOffset() {
+    const { element } = this;
+    let modifier = 0;
+    if (element.classList.contains('nav-btn--md')) {
+      modifier = 10;
+    }
+    if (element.classList.contains('nav-btn--sm')) {
+      modifier = 15;
+    }
+    return POPOVER_MIDDLE + modifier;
+  }
+
   /**
    * Position the QR Code relative to the button
    */
@@ -116,7 +128,7 @@ export default class NavQrButton extends NavButton {
 
     const top =
       position === "right"
-        ? elementRect.top - POPOVER_MIDDLE
+        ? elementRect.top - this.topOffset()
         : elementRect.bottom;
 
     // apply position
