@@ -28,6 +28,8 @@ export default class NavQrButton extends NavButton {
     element.classList.add("nav-btn--qr");
     if (options.position === "right") {
       this.parent.classList.add("nav-btn-container--qr-right");
+    } else {
+      this.parent.classList.remove("nav-btn-container--qr-right");
     }
 
     this.popover = this.parent.getElementsByClassName("nav-btn-qr")[0];
